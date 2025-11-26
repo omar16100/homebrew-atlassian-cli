@@ -1,20 +1,20 @@
 class AtlassianCli < Formula
   desc "Unified CLI for Atlassian Cloud products"
   homepage "https://github.com/omar16100/atlassian-cli"
-  version "0.1.5"
+  version "0.1.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.5/atlassian-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "1c7f23b76393103ce1be3e57400e5b129a988978b26afd57f08aa401fec49ff6"
+      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.6/atlassian-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "1cbda8806ed8a401cb3206f57b5f71376f33b50c36764710b44ffc204ce387d4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.5/atlassian-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "0d8c7e1a706284d93369a02508677d3a1a71a01e09a2137abcaf87f9d824ea1b"
+      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.6/atlassian-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "c4ff0eb32b0ca75238c8ed0247fe7cf0eef63dcf2c3f6f678a92570d9bfb7d8d"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.5/atlassian-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "fdb543a21fb1f877472b5c14244a2cf42b368aaa7221057a52e6d1dab9848bed"
+    url "https://github.com/omar16100/atlassian-cli/releases/download/v0.1.6/atlassian-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "9e872791166661efc803461255f22ffdaaedd915c30b1078db7e204ba21a00a9"
   end
   license "MIT"
 

@@ -1,20 +1,20 @@
 class AtlassianCli < Formula
   desc "Unified CLI for Atlassian Cloud products"
   homepage "https://atlassiancli.com"
-  version "0.5.1"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.5.1/atlassian-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "edab65ae1f83f75dcc91ae38745c770f71cb7bfa35ec52438301e13fc00f47fe"
+      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.6.0/atlassian-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "9d9b6ccc634edfa8aeb876b5ec2c67d522d70de707adc977be4b40b0bc431e84"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.5.1/atlassian-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "5b58a0777983b3d82d116a5cb4e536919c9a812980cbb85b950f4968fdf10df7"
+      url "https://github.com/omar16100/atlassian-cli/releases/download/v0.6.0/atlassian-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "f055fa2626168aeab1715551157bf7a281466ddb5e51ef3b27ecfb77ec291a77"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/omar16100/atlassian-cli/releases/download/v0.5.1/atlassian-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "9d0bdc25bd51db5b146bb76bc30c37a72c659b2b4bca34a3d9396d280ee0b3df"
+    url "https://github.com/omar16100/atlassian-cli/releases/download/v0.6.0/atlassian-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "4220c71a3edc3008b7281e4d7636b640eca85e84771ff5e19499390c1f8655ae"
   end
   license "MIT"
 
@@ -42,9 +42,15 @@ class AtlassianCli < Formula
   end
 
   def install
-    bin.install "atlassian-cli" if OS.mac? && Hardware::CPU.arm?
-    bin.install "atlassian-cli" if OS.mac? && Hardware::CPU.intel?
-    bin.install "atlassian-cli" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "atlassian-cli"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "atlassian-cli"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "atlassian-cli"
+    end
 
     install_binary_aliases!
 
